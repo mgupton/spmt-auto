@@ -1,0 +1,29 @@
+{
+   "Tasks":[
+      {
+         "SourcePath":"https://<source site url>",
+         "TargetPath":"https://<target site url>",
+         "RunMigration": true,
+         "Settings": {
+            "MigrateFileVersionHistory": true,
+            "KeepFileVersions": 100,
+            "MigrateHiddenItems": false,
+            "MigrateItemsCreatedAfter": null,
+            "MigrateItemsModifiedAfter": null,
+            "SkipFilesWithExtensions": null,
+            "EnableAzureDirectoryLookup": false,
+            "PreservePermission": true,
+            "UseCustomAzureStorage": false,
+            "CustomAzureStorageAccount": null,
+            "CustomAzureAccessKey": null,
+            "CustomAzureDeletionAfterMig": false,
+            "UserMappingCSVFile": null,
+            "SkipListWithAudienceEnabled": true,
+            "EnableIncremental": false,
+            "MigrateOneNoteNotebook": true,
+            "MigrateAllWebStructures": false,
+            "FilterOutPathSpecialCharacters": false
+          }
+      }
+   ]
+}
