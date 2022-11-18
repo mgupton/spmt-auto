@@ -1,8 +1,8 @@
 {
    "Tasks":[
       {
-         "SourcePath":"https://<source site url>",
-         "TargetPath":"https://<target site url>",
+         "SourcePath":"https://<source site1 url>",
+         "TargetPath":"https://<target site1 url>",
          "RunMigration": true,
          "Settings": {
             "MigrateFileVersionHistory": true,
@@ -11,7 +11,32 @@
             "MigrateItemsCreatedAfter": null,
             "MigrateItemsModifiedAfter": null,
             "SkipFilesWithExtensions": null,
-            "EnableAzureDirectoryLookup": false,
+            "EnableUserMapping": false,
+            "PreservePermission": true,
+            "UseCustomAzureStorage": false,
+            "CustomAzureStorageAccount": null,
+            "CustomAzureAccessKey": null,
+            "CustomAzureDeletionAfterMig": false,
+            "UserMappingCSVFile": null,
+            "SkipListWithAudienceEnabled": true,
+            "EnableIncremental": false,
+            "MigrateOneNoteNotebook": true,
+            "MigrateAllWebStructures": false,
+            "FilterOutPathSpecialCharacters": false
+          }
+      },
+      {
+         "SourcePath":"https://<source site2 url>",
+         "TargetPath":"https://<target site2 url>",
+         "RunMigration": true,
+         "Settings": {
+            "MigrateFileVersionHistory": true,
+            "KeepFileVersions": 100,
+            "MigrateHiddenItems": false,
+            "MigrateItemsCreatedAfter": null,
+            "MigrateItemsModifiedAfter": null,
+            "SkipFilesWithExtensions": null,
+            "EnableUserMapping": false,
             "PreservePermission": true,
             "UseCustomAzureStorage": false,
             "CustomAzureStorageAccount": null,

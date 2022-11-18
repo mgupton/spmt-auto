@@ -6,6 +6,10 @@
 # Created By: Michael Gupton
 #
 
+param(
+    [Parameter(Mandatory=$true)] [String]$jobs_file
+)
+
 Import-Module Microsoft.SharePoint.MigrationTool.PowerShell
 
 $SPCredential = Get-Credential -Message "Please enter Sharepoint Server credentials"
@@ -14,7 +18,7 @@ $SPOCredential = Get-Credential -Message "Please enter Sharepoint Online credent
 # Register the SPMT session with SharePoint credentials
 Register-SPMTMigration -SPOCredential $SPOCredential -Force -ScanOnly $false -AutomaticUserMapping $false
 
-$jsonSettings = Get-Content -Raw -Path  "spmt-auto.json" | ConvertFrom-Json
+$jsonSettings = Get-Content -Raw -Path  $jobs_file | ConvertFrom-Json
 ForEach ($taskItem in $jsonSettings.Tasks)
 {
     if ($taskItem.RunMigration) {
