@@ -15,10 +15,11 @@ Import-Module Microsoft.SharePoint.MigrationTool.PowerShell
 $SPCredential = Get-Credential -Message "Please enter Sharepoint Server credentials"
 $SPOCredential = Get-Credential -Message "Please enter Sharepoint Online credentials"
 
-# Register the SPMT session with SharePoint credentials
-Register-SPMTMigration -SPOCredential $SPOCredential -Force -ScanOnly $false -AutomaticUserMapping $false
-
 $jsonSettings = Get-Content -Raw -Path  $jobs_file | ConvertFrom-Json
+
+# Register the SPMT session with SharePoint credentials
+Register-SPMTMigration -SPOCredential $SPOCredential -Force -ScanOnly $false -AutomaticUserMapping $false -WorkingFolder $jsonSettings.Settings.WorkingFolder
+
 ForEach ($taskItem in $jsonSettings.Tasks)
 {
     if ($taskItem.RunMigration) {
